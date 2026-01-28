@@ -100,7 +100,7 @@ class MQTT:
             payload = msg.payload.decode("utf-8")
             # print(payload) # UNCOMMENT WHEN DEBUGGING
             update  = loads(payload) # CONVERT FROM JSON STRING TO JSON OBJECT  
-        
+            self.publish("620171573_sub", payload)
              
             print(update)
 
