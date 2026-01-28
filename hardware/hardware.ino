@@ -41,8 +41,8 @@
 
 
 // MQTT CLIENT CONFIG  
-static const char* pubtopic       = "620012345";                    // Add your ID number here
-static const char* subtopic[]     = {"620012345_sub","/elet2415"};  // Array of Topics(Strings) to subscribe to
+static const char* pubtopic       = "620171573";                    // Add your ID number here
+static const char* subtopic[]     = {"620171573_sub","/elet2415"};  // Array of Topics(Strings) to subscribe to
 static const char* mqtt_server    = "address or ip";                // Broker IP address or Domain name as a String 
 static uint16_t mqtt_port         = 1883;
 
@@ -138,7 +138,7 @@ void vUpdate( void * pvParameters )  {
           char message[1100]  = {0};
 
           // Add key:value pairs to JSon object
-          doc["id"]         = "620012345";
+          doc["id"]         = "620171573";
 
           serializeJson(doc, message);  // Seralize / Covert JSon object to JSon string and store in char* array
 
