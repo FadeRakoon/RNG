@@ -34,11 +34,11 @@ class MQTT:
 
 
         # REGISTER CALLBACK FUNCTION FOR EACH TOPIC
-        self.client.message_callback_add("620012345", self.gdp)
-        self.client.message_callback_add("620012345_pub", self.toggle)
+        self.client.message_callback_add("620171573", self.gdp)
+        self.client.message_callback_add("620171573_pub", self.toggle)
 
         # ADD MQTT SERVER AND PORT INFORMATION BELOW
-        self.client.connect_async("localhost", 1883, 60)
+        self.client.connect_async("www.yanacreations.com", 1883, 60)
        
 
 
@@ -61,7 +61,7 @@ class MQTT:
     def publish(self,topic,payload):
         try :
             info = self.client.publish(topic, payload)
-            info.wait_for_publish()
+            info.wait_for_publish()  #race condition cuz blocking uh oh
             return info.is_published()
         
         except Exception as e:
