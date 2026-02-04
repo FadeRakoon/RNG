@@ -56,8 +56,8 @@ static const char* mqtt_server    = "address or ip";                // Broker IP
 static uint16_t mqtt_port         = 1883;
 
 // WIFI CREDENTIALS
-const char* ssid                  = "YOUR_SSID"; // Add your Wi-Fi ssid
-const char* password              = "YOUR_PASS"; // Add your Wi-Fi password 
+const char* ssid                  = "Rakoon"; // Add your Wi-Fi ssid
+const char* password              = "i_isARakoon"; // Add your Wi-Fi password 
 
 
 
