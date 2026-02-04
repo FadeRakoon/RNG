@@ -61,7 +61,7 @@ class MQTT:
     def publish(self,topic,payload):
         try :
             info = self.client.publish(topic, payload)
-            info.wait_for_publish()  #race condition cuz blocking uh oh
+            info.wait_for_publish()  #race condition cuz blocking uh oh -> return info.rc == 0
             return info.is_published()
         
         except Exception as e:
