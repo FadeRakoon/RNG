@@ -43,7 +43,14 @@ class MQTT:
 
 
     def connack_string(self,rc):
-        connection = {0: "Connection successful", 1: "Connection refused - incorrect protocol version", 2: "Connection refused - invalid client identifier", 3: "Connection refused - server unavailable", 4: "Connection refused - bad username or password", 5: "Connection refused - not authorised" }
+        connection = {
+            0: "Connection successful", 
+            1: "Connection refused - incorrect protocol version", 
+            2: "Connection refused - invalid client identifier", 
+            3: "Connection refused - server unavailable", 
+            4: "Connection refused - bad username or password", 
+            5: "Connection refused - not authorised" 
+        }
         return connection[rc]
 
  
@@ -61,8 +68,9 @@ class MQTT:
     def publish(self,topic,payload):
         try :
             info = self.client.publish(topic, payload)
-            info.wait_for_publish()  #race condition cuz blocking uh oh -> return info.rc == 0
-            return info.is_published()
+            #info.wait_for_publish()  #race condition cuz blocking uh oh -> return info.rc == 0
+            #return info.is_published()
+            return info.rc == 0
         
         except Exception as e:
             print(f"MQTT: Publish failed {str(e)}")

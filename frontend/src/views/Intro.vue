@@ -63,7 +63,7 @@ const { payload } = storeToRefs(mqttStore);
 // FUNCTIONS
 const toggle = (name) => {
   let message = JSON.stringify({"type": "toggle", "device": name});
-  mqttStore.publish("620171008_pub", message);
+  mqttStore.publish("620171573_pub", message);
 };
 
 onMounted(() => {
@@ -72,7 +72,7 @@ onMounted(() => {
 
   setTimeout(() => {
     // Subscribe to each topic
-    mqttStore.subscribe("620171008");
+    mqttStore.subscribe("620171573");
   }, 3000);
 });
 
